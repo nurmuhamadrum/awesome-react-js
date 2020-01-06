@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-class AboutMeScreen extends Component {
+class ContactScreen extends Component {
   render() {
     return (
       <div>
-        <h2>About</h2>
+        <h2>Contact</h2>
       </div>
     );
   }
 }
 
-export default AboutMeScreen;
+export default ContactScreen;

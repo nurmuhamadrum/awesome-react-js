@@ -1,29 +1,26 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Header from "./app/component/Header";
-import Footer from "./app/component/Footer";
-import HomeScreen from "./app/screens/HomeScreen";
 
-class Layout extends Component {
-  render() {
-    return (
-      <div>
-        <Header />
-        {this.props.children}
-        <Footer />
-      </div>
-    );
-  }
-}
+import AboutScreen from "./app/screens/AboutMeScreen";
+import HomeScreen from "./app/screens/HomeScreen";
+import Layout from "./app/components/Layout";
 
 class App extends Component {
   render() {
     return (
-      <Layout>
-        <div className="app-content">
-          <HomeScreen />
-        </div>
-      </Layout>
+      <Router>
+        <Switch>
+          <Layout>
+            <Route exact path="/">
+              <HomeScreen />
+            </Route>
+            <Route path="/about">
+              <AboutScreen />
+            </Route>
+          </Layout>
+        </Switch>
+      </Router>
     );
   }
 }
